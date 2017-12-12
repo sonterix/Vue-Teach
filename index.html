@@ -16,12 +16,13 @@
         <p>{{ message }}</p>
         <hr>
 
-        <input @input="textInput = $event.target.value" type="text">
+        <input @input="changeInput" type="text">
         <p :id="textInput">{{ textInput }}</p>
         <hr>
 
         <p class="btn" @click="showText = !showText">Hide/Show</p>
         <p v-if="showText">Some Text</p>
+        <p v-else>Default Text</p>
     </section>
 
     <script src="js/vue.js"></script>

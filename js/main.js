@@ -3,11 +3,14 @@ new Vue({
     data: {
         message: 'Hellow',
         textInput: 'Type text',
-        showText: true,
+        showText: false,
     },
     methods: {
         changeText(){
             this.message = 'Hellow World';
+        },
+        changeInput(event){
+            this.textInput = event.target.value;
         }
     }
 });
