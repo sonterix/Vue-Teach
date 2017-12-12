@@ -5,7 +5,8 @@ new Vue({
         playerHealth: 100,
         monsterHealth: 100,
         gameIsRunning: false,
-        turns: []
+        turns: [],
+        specialAttackCounter: 0
     },
 
     methods: {
@@ -17,6 +18,7 @@ new Vue({
             this.playerHealth = 100;
             this.monsterHealth = 100;
             this.turns= [];
+            this.specialAttackCounter = 0;
         },
         attack: function(){
             var damage = this.calculateDamage(3, 10);           
@@ -28,12 +30,17 @@ new Vue({
             this.monsterAttacks();
         },
         specialAttack: function(){
+            if(this.specialAttackCounter >= 3){
+                alert("You can use 'Special Attack' only 3 times!");
+                return;
+            }
             var damage = this.calculateDamage(10, 20)
             this.monsterHealth -= damage;
             this.turns.unshift({
                 type: 'specialAttack',
                 text: 'You hits Monster hard for ' + damage
             });
+            this.specialAttackCounter++;            
             this.monsterAttacks();            
         },
         heal: function(){
@@ -67,7 +74,7 @@ new Vue({
         },
         checkWin: function(){
             if(this.monsterHealth <= 0){
-                if(confirm('You Won! Start New Game?')){
+                if(confirm('You Won! Start new game?')){
                     this.clearLastGame();
                     this.startGame();
                 }else {
@@ -75,7 +82,7 @@ new Vue({
                 }    
 
             }else if(this.playerHealth <= 0){
-                if(confirm('You Lost! Start New Game?')){
+                if(confirm('You Lost! Start new game?')){
                     this.clearLastGame();
                     this.startGame();
                 }else {
