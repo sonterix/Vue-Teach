@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700');
+
+body{
+    font-family: 'Roboto Condensed', sans-serif !important;
+    overflow: hidden;
+}
+
+.text-center {
+    text-align: center;
+    color: #212121;
+}
+
+.healthbar {
+    width: 99%;
+    height: 30px;
+    background-color: #eee;
+    margin: auto;
+    transition: width 0.5s ease-in-out;
+}
+.healthNumber{
+    font-weight: 600;
+    line-height: 30px;
+}
+.healthNumber::after{
+    content: '%';
+}
+.healthBox{
+    margin: 0;
+    color: #fff;
+    background-color: green;
+}
+
+.controls, .log {
+    margin-top: 30px;
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+    box-shadow: 0px 3px 6px #ccc;
+}
+
+.turn {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.log ul {
+    list-style: none;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.log ul li {
+    margin: 5px;
+}
+
+.monsterAttack{
+    color: #212121;   
+}
+.attack{
+    color: #D84315;
+}
+.specialAttack{
+    color: #FF6D00;
+}
+.heal{
+    color: #2E7D32;    
+}
+
+button {
+    margin: 10px !important;
+    padding: 12px !important;
+    font-size: 20px;
+    font-weight: 700 !important;
+    color: #fff !important;
+    box-shadow: 0 1px 1px #525252;
+    outline: none;
+}
+button:active {
+    box-shadow: 0 0 1px #525252;
+}
+
+#start-game {
+    padding: 20px !important;
+    font-size: 24px;
+    background-color: #607D8B;
+}
+
+#start-game:hover {
+    background-color: #546E7A;
+}
+
+#attack {
+    background-color: #E64A19;
+}
+
+#attack:hover {
+    background-color: #D84315;
+}
+
+#special-attack {
+    background-color: #FF9100;
+}
+
+#special-attack:hover {
+    background-color: #FF6D00;
+}
+
+#heal {
+    background-color: #388E3C;
+}
+
+#heal:hover {
+    background-color: #2E7D32;
+}
+
+#give-up {
+    background-color: #BDBDBD;
+}
+
+#give-up:hover {
+    background-color: #9E9E9E;
+}

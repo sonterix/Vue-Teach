@@ -8,6 +8,18 @@ new Vue({
         counter: 0,
         x: 0,
         y: 0,
+        vmodelText: 'Some Text',
+        width: 100,
+        backgroundColor: 'white',
+        ingridients: ['meat', 'fruit', 'cookies'],
+    },
+    computed: {
+        addStyle: function(){
+            return {
+                width: this.width + 'px',
+                backgroundColor: this.backgroundColor,
+            }
+        }
     },
     methods: {
         changeText: function(){
@@ -16,12 +28,12 @@ new Vue({
         changeInput: function(event){
             this.textInput = event.target.value;
         },
-        increase: function(){
-            this.counter++;
-        },
         updateCoordinates: function(event){
             this.x = event.clientX;
             this.y = event.clientY;
+        },
+        alertMe: function(event){
+            alert(event.target.value);
         }
     }
 });

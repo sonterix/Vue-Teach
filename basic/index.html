@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Vue</title>
+
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    
+    <section id="vue">
+        
+        <!-- v-on:click -->
+        <h1> v-on:click </h1>        
+        <p class="btn" @click="changeText">Change</p>
+        <p>{{ message }}</p>
+        <hr>
+
+        <!-- v-bind -->
+        <h1> v-bind </h1>
+        <p :id="textInput">{{ textInput }}</p>
+        <input @input="changeInput" type="text" >
+        <hr>
+
+        <!-- v-if -->
+        <h1> v-if & v-else </h1>
+        <p class="btn" @click="showText = !showText">Hide/Show</p>
+        <p v-if="showText">Some Text</p>
+        <p v-else>Default Text</p>
+        <hr>
+
+        <!-- v-html -->
+        <h1> v-html </h1>
+        <p v-html="htmlText"></p>
+        <hr>
+
+        <!-- counter & v-on:mousemove -->
+        <h1> counter & v-on:mousemove </h1>
+        <p>You click {{ counter }} times</p>
+        <p @mousemove="updateCoordinates" style="cursor:crosshair;">
+            Coordinates: {{ x }} / {{ y }} - <span @mousemove.stop="">DEAD SPOT</span> -
+        </p>
+        <button @click="counter++">Click</button>
+        <hr>
+
+        <!-- v-on:keyup.enter -->
+        <h1> v-on:keyup.enter </h1>
+        <input @keyup.enter="alertMe" type="text" placeholder="When u end - tap 'Enter'">
+        <hr>
+
+        <!-- v-model -->
+        <h1> v-model </h1>
+        <p>{{ vmodelText }}</p>
+        <input type="text" v-model="vmodelText">
+        <hr>
+
+        <!-- computed & v-bind -->
+        <h1> computed & v-bind </h1>
+        <div :style="addStyle" class="box"></div>
+        <div :style="[addStyle, {height: width + 'px'}]" class="box"></div>
+        <br>
+        <input type="number" v-model="width">
+        <input type="text" v-model="backgroundColor">
+        <hr>
+
+        <!-- v-for -->
+        <h1> v-for </h1>
+        <ul>
+            <li v-for="(value, index) in ingridients" :key="index">{{ index}}. {{ value }}</li>
+        </ul>
+        <input type="text" @keyup.enter="ingridients.push($event.target.value)" placeholder="Enter new ingridient">
+        <hr>
+        
+    </section>
+
+    <script src="js/vue.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
