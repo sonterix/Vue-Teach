@@ -1,4 +1,8 @@
-new Vue({
+Vue.component('hello', {
+    template: '<p>Hello Nick!</p>'
+});
+
+var vm = new Vue({
     el: '#vue',
     data: {
         message: 'Hellow',
@@ -35,5 +39,8 @@ new Vue({
         alertMe: function(event){
             alert(event.target.value);
         }
-    }
+    },
+
 });
+
+console.log('myP: ' + vm.$refs.myP.innerText)

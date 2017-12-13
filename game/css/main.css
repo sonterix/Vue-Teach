@@ -6,7 +6,9 @@
 
 body{
     font-family: 'Roboto Condensed', sans-serif !important;
-    overflow: hidden;
+}
+body::-webkit-scrollbar{
+    width: 0px;
 }
 
 button {
