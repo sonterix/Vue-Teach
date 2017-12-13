@@ -16,7 +16,8 @@
 
         <section class="row">
             <div class="small-6 columns">
-                <h1 class="text-center">YOU</h1>
+                <h1 class="text-center fightersName" @click="checkNameFighters">{{ player1 }}</h1>
+                <input type="text" v-model="player1" v-if="checkInput">
                 <div class="healthbar">
                     <div class="healthbar text-center healthBox" :style="{width: playerHealth + '%'}">
                         <span class="healthNumber">{{ playerHealth }}</span>
@@ -24,7 +25,8 @@
                 </div>
             </div>
             <div class="small-6 columns">
-                <h1 class="text-center">MONSTER</h1>
+                <h1 class="text-center fightersName" @click="checkNameFighters">{{ player2 }}</h1>
+                <input type="text" v-model="player2" v-if="checkInput">
                 <div class="healthbar">
                     <div class="healthbar text-center healthBox" :style="{width: monsterHealth + '%'}">
                         <span class="healthNumber">{{ monsterHealth }}</span>                        

@@ -1,13 +1,48 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700');
 
+*::selection{
+    background-color: transparent;
+}
+
 body{
     font-family: 'Roboto Condensed', sans-serif !important;
     overflow: hidden;
 }
 
+button {
+    margin: 10px !important;
+    padding: 12px !important;
+    font-size: 20px;
+    font-weight: 700 !important;
+    color: #fff !important;
+    box-shadow: 0 1px 1px #525252;
+    outline: none;
+}
+button:active {
+    box-shadow: 0 0 1px #525252;
+}
 .text-center {
     text-align: center;
     color: #212121;
+}
+
+input{
+    text-align: center;
+    margin-bottom: 20px !important;
+    padding: 5px;
+    color: #212121;
+    outline: none;
+    border: 1px solid #ccc;
+    box-shadow: 0px 3px 6px #ccc;
+    transition: 0.5s ease-in-out;
+}
+input::selection{
+    color: #fff;
+    background-color: #607D8B;
+}
+
+.small-6{
+    text-align: center;
 }
 
 .healthbar {
@@ -29,6 +64,11 @@ body{
     margin: 0;
     color: #fff;
     background-color: green;
+}
+
+.fightersName{
+    text-transform: uppercase;
+    cursor: pointer;
 }
 
 .controls, .log {
@@ -67,19 +107,6 @@ body{
 }
 .heal{
     color: #2E7D32;    
-}
-
-button {
-    margin: 10px !important;
-    padding: 12px !important;
-    font-size: 20px;
-    font-weight: 700 !important;
-    color: #fff !important;
-    box-shadow: 0 1px 1px #525252;
-    outline: none;
-}
-button:active {
-    box-shadow: 0 0 1px #525252;
 }
 
 #start-game {

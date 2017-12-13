@@ -2,16 +2,21 @@ new Vue({
     el: '#vue',
 
     data: {
+        player1: 'player',
+        player2: 'monster',
         playerHealth: 100,
         monsterHealth: 100,
         gameIsRunning: false,
         turns: [],
-        specialAttackCounter: 0
+        specialAttackCounter: 0,
+        checkInput: true,
     },
 
     methods: {
         startGame: function(){
             this.gameIsRunning = true;
+            this.checkInput = false;
+            this.checkInputText();
         },
         clearLastGame: function(){
             this.gameIsRunning = false;
@@ -19,6 +24,7 @@ new Vue({
             this.monsterHealth = 100;
             this.turns= [];
             this.specialAttackCounter = 0;
+            this.checkInput = false;
         },
         attack: function(){
             var damage = this.calculateDamage(3, 10);           
@@ -90,7 +96,23 @@ new Vue({
                 }
 
             }
+        },
+        checkNameFighters: function(){
+            if(!this.gameIsRunning){
+                this.checkInput = !this.checkInput;
+                this.checkInputText();
+            } else{
+                alert('Complete the current game for nicknames change!');
+            }
+        },
+        checkInputText: function(){
+            if(this.player1.length == 0){  
+                this.player1 = 'player';
+            } 
+            if(this.player2.length == 0){
+                this.player2 = 'monster';
+            }
         }
-    }
+    },
 
 });
